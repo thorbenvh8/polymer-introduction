@@ -1,0 +1,229 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/league.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<style>
+			.reveal section img.no-border {
+				border: 0;
+				background:none;
+				box-shadow: none;
+			}
+
+			.list em {
+				color: darkgrey;
+			}
+		</style>
+
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Webcomponents with Polymer</h1>
+					<img class="no-border" data-src="img/polymer-logo.png">
+				</section>
+				<section>
+					<h2>Thorben von Hacht</h2>
+					<p>@thorbenvh8</p>
+					<p style="margin-top: 50px">Java software developer<br/>@bonprix</p>
+					<img class="no-border" style="max-width: 200px;" data-src="img/bonprix-logo.png">
+				</section>
+				<section>
+					<section>
+						<h2>Libraries</h2>
+						<h3>webcomponents.js <a href="http://webcomponents.org/polyfills/"><img class="no-border" style="max-width: 20px;" data-src="img/ext-link.png"></a></h3>
+						<img style="position: absolute; right: 190px; top: 110px; width: 90px;" class="no-border" data-src="img/webcomponents-logo.svg">
+						<h3>polymer.html  <a href="https://www.polymer-project.org/1.0/"><img class="no-border" style="max-width: 20px;" data-src="img/ext-link.png"></a></h3>
+						<img style="position: absolute; right: 240px; top: 200px; width: 90px;" class="no-border" data-src="img/polymer-logo.png">
+					</section>
+					<section class="list">
+						<h2>webcomponents.js <a href="http://webcomponents.org/polyfills/"><img class="no-border" style="max-width: 20px;" data-src="img/ext-link.png"></a></h2>
+						<img style="position: absolute; right: 120px; top: 0px; width: 110px;" class="no-border" data-src="img/webcomponents-logo.svg">
+						<ul>
+							<li><h3>Web Components</h3></li>
+							<ul>
+								<li>Custom Elements<em> - Define new elements in HTML</em></li>
+								<li>HTML Imports<em> - Load element definitions and other resources declaratively</em></li>
+								<li>Shadow DOM<em> - Encapsulate DOM subtrees and the associated CSS</em></li>
+							</ul>
+							<li><h3>DOM</h3></li>
+							<ul>
+								<li>WeakMap<em> - Shim for ES6 WeakMap type</em></li>
+								<li>Mutation Observers<em> - Efficiently watch for changes in the DOM</em></li>
+							</ul>
+						</ul>
+						<aside class="notes">
+							Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+						</aside>
+					</section>
+					<section>
+						<h2>webcomponents.js <a href="http://webcomponents.org/polyfills/"><img class="no-border" style="max-width: 20px;" data-src="img/ext-link.png"></a></h2>
+						<img style="position: absolute; right: 120px; top: 0px; width: 110px;" class="no-border" data-src="img/webcomponents-logo.svg">
+						<h3>Browser Support</h3>
+						<div class="page-index-browsers layout wrap justified spaced">
+							<img class="no-border" data-src="https://www.polymer-project.org/images/browsers/chrome_128x128.png" alt="chrome logo">
+							<img class="no-border" data-src="https://www.polymer-project.org/images/browsers/firefox_128x128.png" alt="firefox logo">
+							<img class="no-border" data-src="https://www.polymer-project.org/images/browsers/internet-explorer_128x128.png" alt="internet explorer logo">
+							<img class="no-border" data-src="https://www.polymer-project.org/images/browsers/edge_128x128.png" alt="edge logo">
+							<img class="no-border" data-src="https://www.polymer-project.org/images/browsers/safari_128x128.png" alt="safari logo">
+							<img class="no-border" data-src="https://www.polymer-project.org/images/browsers/opera_128x128.png" alt="opera logo">
+						</div>
+						<p>Chrome, Firefox, IE 11+/Edge, Safari 7+, Chrome (Android), Safari (iOS 7.1)</p>
+					</section>
+					<section>
+						<h2>polymer.html  <a href="https://www.polymer-project.org/1.0/"><img class="no-border" style="max-width: 20px;" data-src="img/ext-link.png"></a></h2>
+						<img style="position: absolute; right: 160px; top: 10px; width: 120px;" class="no-border" data-src="img/polymer-logo.png">
+						<h3>idea</h3>
+						<ul>
+							<li>lightweight library</li>
+							<li>reusable custom elements</li>
+							<li>interoperate seamlessly with the browser’s built-in elements</li>
+							<li>making your code cleaner</li>
+							<li>less expensive to maintain</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>My Component</h2>
+						<img style="position: absolute; right: 160px; top: 10px; width: 120px;" class="no-border" data-src="img/polymer-logo.png">
+						<p>my-component.html</p>
+						<pre><code data-trim class="html">
+<link rel="import" href="../polymer/polymer.html">
+
+<dom-module id="my-component">
+	...
+</dom-module>
+						</code></pre>
+					</section>
+					<section>
+						<h2>My Component</h2>
+						<img style="position: absolute; right: 160px; top: 10px; width: 120px;" class="no-border" data-src="img/polymer-logo.png">
+						<p>my-component.html</p>
+						<pre><code data-trim class="html">
+<dom-module id="my-component">
+  <template>
+    <style>
+      /* Local DOM CSS style */
+    </style>
+    <!-- Local DOM -->
+    Hello {{name}}!
+  </template>
+  <script>
+  Polymer({
+	  is: 'my-component',
+	  properties: {
+		  name: String
+		  /* Element properties */
+	  },
+	  ready: function() {
+		  /* Called when local DOM is initialized */
+	  },
+	  /* Custom methods */
+  });
+  </script>
+</dom-module>
+						</code></pre>
+					</section>
+				</section>
+				<section>
+					<h2>My Component</h2>
+					<img style="position: absolute; right: 160px; top: 0px; width: 110px;" class="no-border" data-src="img/webcomponents-logo.svg">
+					<p>index.html</p>
+  					<pre><code data-trim class="html">
+<script src="../webcomponentsjs/webcomponents-lite.js"></script>
+<link rel="import" href="../my-component.html">
+
+<my-component name="world"></my-component>
+  					</code></pre>
+				</section>
+				<section>
+					<h2>Demo <a href="http://localhost:8080/components/seed-element/demo/" target="_blank"><img class="no-border" style="max-width: 20px;" data-src="img/ext-link.png"></a></h2>
+					<p><a href="https://github.com/PolymerElements/seed-element"><img class="no-border" style="max-width: 50px; padding: 0; margin: 0;" data-src="img/github-logo.png"></a> PolymerElements/seed-element</p>
+				</section>
+				<section>
+					<h2>Polymer Elements <a href="https://elements.polymer-project.org/" target="_blank"><img class="no-border" style="max-width: 20px;" data-src="img/ext-link.png"></a></h2>
+					<p>
+						<img class="no-border" data-src="img/periodsystem-polymer.png">
+					</p>
+				</section>
+				<section>
+					<h2>Documentation <a href="http://localhost:8080/components/seed-element/" target="_blank"><img class="no-border" style="max-width: 20px;" data-src="img/ext-link.png"></a></h2>
+				</section>
+				<section>
+					<h2>More cool stuff with Polymer</h2>
+					<p>customelements.io <a href="http://customelements.io" target="_blank"><img class="no-border" style="max-width: 20px;" data-src="img/ext-link.png"></a></p>
+					<img style="position: absolute; right: 220px; top: 120px; width: 70px;" class="no-border" data-src="img/customelementsio-logo.png">
+				</section>
+				<section>
+					<h2>Alternative</h2>
+					<p>riot.js <a href="http://riotjs.com" target="_blank"><img class="no-border" style="max-width: 20px;" data-src="img/ext-link.png"></a></p>
+					<img style="position: absolute; right: 270px; top: 120px; width: 120px;" class="no-border" data-src="img/riot-logo.png">
+				</section>
+				<section>
+					<h2>Review</h2>
+					<div style="width: 50%; float: left; display: inline-block">
+						<p>PRO</p>
+						<ul>
+							<li>easy to learn</li>
+							<li>clean code</li>
+							<li>automatic documentation</li>
+						</ul>
+					</div>
+					<div style="width: 50%; float: left; display: inline-block">
+						<p>CONTRA</p>
+						<ul>
+							<li>annoying styling</li>
+							<li>no ECMAScript6</li>
+						</ul>
+					</div>
+				</section>
+				<section>
+					<h2>DatabaseVisualizer <a href="https://thorbenvh8.github.io/polymer-database-visualizer/" target="_blank"><img class="no-border" style="max-width: 20px;" data-src="img/ext-link.png"></a></h2>
+					<p>
+						<img style="width: 80%" class="no-border" data-src="img/databasevisualizer.png">
+					</p>
+				</section>
+				<section>
+					<h2>Questions?</h2>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
